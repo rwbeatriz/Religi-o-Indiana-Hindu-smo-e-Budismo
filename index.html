@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Religião Indiana: Hinduísmo e Budismo</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Marcellus&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header id="topo">
+    <div class="overlay">
+      <h1>Religião Indiana: Hinduísmo e Budismo</h1>
+      <p>Explore a espiritualidade da Índia — de Ganesha a Buda, do dharma ao nirvana.</p>
+    </div>
+  </header>
+
+  <nav class="navbar">
+    <a href="#home">Home</a>
+    <a href="#hinduismo">Hinduísmo</a>
+    <a href="#budismo">Budismo</a>
+    <a href="#deuses">Deuses</a>
+    <a href="#quiz">Quiz</a>
+    <a href="#cultura">Cultura</a>
+    <a href="#contato">Contato</a>
+  </nav>
+
+  <main>
+    <section id="home">
+      <h2>Página Inicial</h2>
+      <p>A religião indiana é uma tapeçaria de crenças antigas, com o hinduísmo como raiz principal e o budismo como sua ramificação filosófica. Este site explora essas tradições milenares e sua influência na cultura, arte e espiritualidade da Índia.</p>
+      <img src="imagens/Taj_Mahal_agra.jpg" alt="Templo indiano">
+    </section>
+
+    <section id="hinduismo">
+      <h2>Hinduísmo</h2>
+      <p>O hinduísmo, uma das religiões mais antigas do mundo, ensina sobre o ciclo da vida (samsara), o dever (dharma) e as consequências (karma). Seus textos sagrados, os Vedas, inspiram milhões até hoje.</p>
+      <p>Entre seus deuses, destacam-se Brahma (criador), Vishnu (preservador) e Shiva (transformador).</p>
+    </section>
+
+    <section id="budismo">
+      <h2>Budismo</h2>
+      <p>Fundado por Siddhartha Gautama (Buda), o budismo busca o equilíbrio e a libertação do sofrimento através da sabedoria e meditação. O caminho do meio, as Quatro Nobres Verdades e o Nobre Caminho Óctuplo são seus pilares.</p>
+    </section>
+
+    <section id="deuses">
+      <h2>Deuses e Deidades</h2>
+
+      <div class="deus">
+        <img src="imagens/ganesha.jpg" alt="Ganesha">
+          <h3>Ganesha</h3>
+          <p>Deus com cabeça de elefante, símbolo da sabedoria e do sucesso. Ganesha remove obstáculos e é invocado no início de novas jornadas.</p>
+        </div>
+      </div>
+
+      <div class="deus">
+        <img src="imagens/kali.jpg" alt="Kali">
+        <div>
+          <h3>Kali</h3>
+          <p>A poderosa deusa da destruição e transformação. Representa o fim do ego e o renascimento espiritual.</p>
+        </div>
+      </div>
+
+      <div class="deus">
+        <img src="imagens/brahma.jpg" alt="Brahma">
+        <div>
+          <h3>Brahma</h3>
+          <p>O criador do universo e parte da Trimurti. Suas quatro cabeças representam os quatro Vedas e as quatro direções do cosmos.</p>
+        </div>
+      </div>
+
+      <div class="deus">
+        <img src="imagensshiva.jpg" alt="Shiva">
+        <div>
+          <h3>Shiva</h3>
+          <p>O destruidor e regenerador. Shiva representa o poder da transformação e a essência da meditação e do autoconhecimento.</p>
+        </div>
+      </div>
+    </section>
+
+      <section id="quiz">
+    <h2>Quiz Interativo</h2>
+    <p>Teste seus conhecimentos sobre as religiões indianas!</p>
+    <a href="quiz.html"><button>Iniciar Quiz</button></a>
+  </section>
+
+    <section id="cultura">
+      <h2>Cultura e Práticas</h2>
+      <p>A religião indiana influencia profundamente a arte, música, dança e festivais. Celebrações como <strong>Diwali</strong> (festival das luzes), <strong>Holi</strong> (festival das cores) e <strong>Vesak</strong> (dia de Buda) são expressões vivas de sua espiritualidade.</p>
+    </section>
+
+    <section id="contato">
+      <h2>Contato e Sobre</h2>
+      <p>Este site é uma fonte educativa sobre as tradições espirituais da Índia. Envie sugestões para <a href="mailto:celc@celc-cordeiro.com.br">celc@celc-cordeiro.com.br</a>.</p>
+      <a href="#topo" class="voltar-topo">⬆ Voltar ao topo</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Religião Indiana • Desenvolvido com respeito à cultura indiana 🌺</p>
+  </footer>
+
+  <script>
+    // Rolagem suave
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(link.getAttribute('href'));
+        if (target) {
+          window.scrollTo({
+            top: target.offsetTop - 70,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
