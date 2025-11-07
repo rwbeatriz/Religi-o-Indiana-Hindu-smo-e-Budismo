@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz - Religião Indiana</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    main { max-width: 700px; margin: 30px auto; background: white; padding: 20px; border-radius: 10px; }
+    h2 { color: #ff6600; text-align: center; }
+    .question { margin-bottom: 20px; }
+    .options button { display: block; width: 100%; margin: 5px 0; padding: 10px; border: none; border-radius: 5px; cursor: pointer; background-color: #ff6600; color: white; }
+    .options button:hover { background-color: #e55a00; }
+    .result { text-align: center; font-weight: bold; margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Quiz - Religião Indiana</h1>
+  </header>
+
+  <main>
+    <h2>Teste seus conhecimentos!</h2>
+    <div id="quiz-container"></div>
+    <div class="result" id="result"></div>
+    <button id="restart" style="display:none;">Reiniciar</button>
+  </main>
+
+  <footer>
+    <p>&copy; 2023 Religião Indiana. Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    const quiz = [
+      {
+        pergunta: "Quem é o deus hindu com cabeça de elefante?",
+        opcoes: ["Shiva", "Ganesha", "Vishnu", "Krishna"],
+        correta: 1
+      },
+      {
+        pergunta: "O fundador do budismo foi:",
+        opcoes: ["Krishna", "Siddhartha Gautama", "Brahma", "Rama"],
+        correta: 1
+      },
+      {
+        pergunta: "Karma, Dharma e Samsara são conceitos de qual religião?",
+        opcoes: ["Budismo", "Cristianismo", "Hinduísmo", "Islamismo"],
+        correta: 2
+      },
+      {
+        pergunta: "Qual dessas deusas simboliza destruição e transformação?",
+        opcoes: ["Lakshmi", "Kali", "Parvati", "Saraswati"],
+        correta: 1
+      },
+      {
+        pergunta: "O objetivo do budismo é alcançar o:",
+        opcoes: ["Paraíso", "Moksha", "Nirvana", "Céu"],
+        correta: 2
+      }
+    ];
+
+    const quizContainer = document.getElementById('quiz-container');
+    const resultContainer = document.getElementById('result');
+    const restartButton = document.getElementById('restart');
+    let currentQuestion = 0;
+    let score = 0;
+
+    function mostrarPergunta() {
+      if (currentQuestion >= quiz.length) {
+        quizContainer.innerHTML = "";
+        resultContainer.innerHTML = `Você acertou ${score} de ${quiz.length} perguntas!`;
+        restartButton.style.display = "block";
+        return;
+      }
+
+      const q = quiz[currentQuestion];
+      quizContainer.innerHTML = `
+        <div class="question">
+          <h3>${q.pergunta}</h3>
+          <div class="options">
+            ${q.opcoes.map((opcao, i) => `<button onclick="verificarResposta(${i})">${opcao}</button>`).join('')}
+          </div>
+        </div>
+      `;
+    }
+
+    function verificarResposta(opcaoSelecionada) {
+      const q = quiz[currentQuestion];
+      if (opcaoSelecionada === q.correta) {
+        score++;
+        alert("✅ Correto!");
+      } else {
+        alert("❌ Errado!");
+      }
+      currentQuestion++;
+      mostrarPergunta();
+    }
+
+    restartButton.addEventListener('click', () => {
+      currentQuestion = 0;
+      score = 0;
+      resultContainer.innerHTML = "";
+      restartButton.style.display = "none";
+      mostrarPergunta();
+    });
+
+    mostrarPergunta();
+  </script>
+</body>
+</html>
